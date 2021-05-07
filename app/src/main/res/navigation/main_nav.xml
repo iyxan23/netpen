@@ -9,7 +9,7 @@
         android:id="@+id/chatsListFragment"
         android:name="com.iyxan23.netpen.fragments.ChatsListFragment"
         android:label="chats_list_fragment"
-        tools:layout="@layout/chats_list_fragment" >
+        tools:layout="@layout/chats_list_fragment">
         <action
             android:id="@+id/action_chatsListFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
@@ -18,5 +18,12 @@
         android:id="@+id/chatFragment"
         android:name="com.iyxan23.netpen.fragments.ChatFragment"
         android:label="chat_fragment"
-        tools:layout="@layout/chat_fragment" />
+        tools:layout="@layout/chat_fragment">
+        <argument
+            android:name="other_side_uid"
+            app:argType="string" />
+        <argument
+            android:name="other_side_username"
+            app:argType="string" />
+    </fragment>
 </navigation>
