@@ -10,8 +10,13 @@ import com.iyxan23.netpen.R
 import com.iyxan23.netpen.fragments.ChatsListFragmentDirections
 import com.iyxan23.netpen.models.ChatItem
 
-class ChatListRecyclerViewAdapter(private val chatItems: ArrayList<ChatItem>)
+class ChatListRecyclerViewAdapter(private var chatItems: ArrayList<ChatItem> = ArrayList())
     : RecyclerView.Adapter<ChatListRecyclerViewAdapter.ViewHolder?>() {
+
+    fun updateView(chatItems: ArrayList<ChatItem>) {
+        this.chatItems = chatItems
+        notifyDataSetChanged()
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder =
         ViewHolder(
